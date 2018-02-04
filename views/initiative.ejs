@@ -2,7 +2,84 @@
 <html>
     <head>
 	<title><%= title %> - Initiative Manager</title>
+
+	<!-- Jquery and socket.io -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<style>
+	 #send-sheet {
+	     padding-left: 8px;
+	 }
+
+	 body {
+	     background-color: #50657a;
+	 }
+	 
+	 /* The side navigation menu */
+	 .sidenav {
+	     height: 100%; /* 100% Full-height */
+	     width: 150px;
+	     position: fixed; /* Stay in place */
+	     z-index: 1; /* Stay on top */
+	     top: 0;
+	     right: 0;
+	     background-color: #ffffff; /* Black*/
+	     overflow-x: hidden; /* Disable horizontal scroll */
+	     padding-top: 60px; /* Place content 60px from the top */
+	     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	 }
+
+	 /* The navigation menu links */
+	 .sidenav a {
+	     padding: 8px 8px 8px 32px;
+	     text-decoration: none;
+	     font-size: 20px;
+	     color: #818181;
+	     display: block;
+	     transition: 0.3s;
+	     text-align: center;
+	 }
+
+	 /* When you mouse over the navigation links, change their color */
+	 .sidenav a:hover{
+	     color: #f1f1f1;
+	 }
+	 
+	 #main {
+	     margin-right: 150px;
+	     padding: 20px;
+	 }
+	 
+	</style>	
     </head>
     <body>
+
+	<div class="sidenav">
+	    <a href="#">Add</a>
+	    <a href="#">New</a>
+	    <hr/>
+	    <a href="#">Next</a>
+	    <a href="#">Previous</a>
+	    <hr/>
+	    <a href="#">Undo</a>	    
+	</div>
+
+	<div id="main">
+	    
+	</div id="main">
+
+	<script src="javascripts/systems.js"></script>
+	<script src="javascripts/sheet.js"></script>
+	
     </body>
 </html>
