@@ -15,6 +15,9 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="javascripts/systems.js"></script>
+	<script src="javascripts/sheet.js"></script>
 	
     </head>
     <body>
@@ -66,22 +69,5 @@
 		    
 		</div>
 	</nav>
-
-	<script>
-	 var socket = io();
-	 var displaySheet = function () {};
-
-	 console.log("Tavola started!");
-
-	 $("#system").change( function() {
-	     
-	     console.log("Form changed: " + $('input[name=system-choice]:checked', '#system').val());
-	     displaySheet();
-	 });
-	 
-	 /* 	 $('<li><button id="send-sheet" type="submit" class="btn btn-default navbar-btn">Save!</button></li>').insertAfter("#creation");*/
-	 
-	</script>
-	
     </body>
 </html>
