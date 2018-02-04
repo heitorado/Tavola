@@ -1,1 +1,2 @@
-* RPG sheet manager
+* [[https://tavola-rpg.herokuapp.com/][Tavola]]
+  A RPG manager.
