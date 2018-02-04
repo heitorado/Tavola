@@ -45,10 +45,10 @@
 
 				<li>
 				    <a>
-					<form>
-					    <label><input type="radio" name="system" value="resistencia" checked> Resistência</label><br>
-					    <label><input type="radio" name="system" value="runequest-6"> Runequest 6e</label><br>
-					    <label><input type="radio" name="system" value="dnd-5" disabled> DnD 5e</label><br>
+					<form id="system" >
+					    <label><input type="radio" name="system-choice" value="resistencia" checked> Resistência</label><br>
+					    <label><input type="radio" name="system-choice" value="runequest-6"> Runequest 6e</label><br>
+					    <label><input type="radio" name="system-choice" value="dnd-5" disabled> DnD 5e</label><br>
 					</form> 	
 				    </a>
 				</li>
@@ -71,6 +71,19 @@
 
 	<script>
 	 var socket = io();
+
+	 console.log("Futhark started!")
+
+	 $("#system form :input").change( function() {
+	     var choice = "";
+	     var selected = $("#system input[type='radio']:checked");
+	     if (selected.length > 0) {
+		 choice = selected.val();
+	     }
+	 });
+	 
+	 console.log( choice );
+	 
 	</script>
 	
     </body>
