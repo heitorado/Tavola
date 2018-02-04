@@ -16,55 +16,15 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-	<style>
-	 #send-sheet {
-	     padding-left: 8px;
-	 }
-
-	 body {
-	     background-color: #50657a;
-	 }
-	 
-	 /* The side navigation menu */
-	 .sidenav {
-	     height: 100%; /* 100% Full-height */
-	     width: 150px;
-	     position: fixed; /* Stay in place */
-	     z-index: 1; /* Stay on top */
-	     top: 0;
-	     right: 0;
-	     background-color: #ffffff; /* Black*/
-	     overflow-x: hidden; /* Disable horizontal scroll */
-	     padding-top: 60px; /* Place content 60px from the top */
-	     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-	 }
-
-	 /* The navigation menu links */
-	 .sidenav a {
-	     padding: 8px 8px 8px 32px;
-	     text-decoration: none;
-	     font-size: 20px;
-	     color: #818181;
-	     display: block;
-	     transition: 0.3s;
-	     text-align: center;
-	 }
-
-	 /* When you mouse over the navigation links, change their color */
-	 .sidenav a:hover{
-	     color: #f1f1f1;
-	 }
-	 
-	 #main {
-	     margin-right: 150px;
-	     padding: 20px;
-	 }
-	 
-	</style>	
+	<link rel="stylesheet" type="text/css" href="stylesheets/initiative.css">
+	
     </head>
     <body>
 
 	<div class="sidenav">
+
+	    <a href="/"><%= title %></a><br>
+	    <hr/>
 	    <a href="#">Add</a>
 	    <a href="#">New</a>
 	    <hr/>

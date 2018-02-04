@@ -1,124 +1,42 @@
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #f2f2f2;
-  height: 100%;
-  width: 100px;
-  padding-top: 18px;
-  
-  .menu {
+#send-sheet {
+    padding-left: 8px;
+}
+
+body {
+    background-color: #50657a;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 150px;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #ffffff; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
     display: block;
-    margin: 0 auto;
-    padding: 0;
-    list-style-type: none;
+    transition: 0.3s;
     text-align: center;
-    
-    &__item {
-      position: relative;
-      margin-bottom: 18px;
-      font-size: 20px;
-      
-      a {
-        color: #C2C2C2;
-      }
-      
-      &:hover {
-        a {
-          color: #72D271; 
-        }
-          
-        .menu__caption {
-          left: 109px;
-          transform: rotateY(0);
-          opacity: 1;
-        }
-      }
-    }
-    
-    &__caption {
-      position: absolute;
-      top: 4px;
-      left: 128px;
-      text-align: left;
-      transition: all .3s;
-      transform: rotateY(45deg);
-      opacity: 0;
-      font-size: 16px;
-      color: #C2C2C2;
-    }
-  }
 }
 
-
-.avatar {
-  width: 64px;
-  height: 64px;
-  background: #afbcbd;
-  border-radius: 50%;
-  margin: 0 auto 18px;
-  position: relative;
-  
-  &:hover {
-    img {
-      box-sizing: border-box;
-      border: 2px solid #72D271;
-    }
-    
-    &:before {
-      display: none;
-    }
-  }
-  
-  img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    transition: border .4s;
-  }
-  
-  &:before {
-    content: "";
-    
-    $width: 52px;
-    
-    width: $width;
-    height: 34px;
-    top: -2px;
-    left: 50%;
-    
-    margin-left: -$width/2;
-    
-    border-radius: 50% 50% 0 0;
-    
-    position: absolute;
-    
-    z-index: -1;
-    
-    background: linear-gradient(to left, rgba(46,204,113,1) 0%,rgba(125,185,232,0) 100%);
-    
-    transform-origin: 50% 100%;
-    transform: rotate(0deg);
-    
-    animation: avatar-anim 4.5s infinite 1.5s;
-  }
- 
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover{
+    color: #f1f1f1;
 }
 
-@keyframes avatar-anim {
-  0% { 
-    transform: rotate(0deg);
-    opacity: 0;
-  }
-  20% { 
-    opacity: 1;
-  }
-  80% { 
-    transform: rotate(360deg);
-    opacity: 0;
-  }
-  100% { 
-    transform: rotate(360deg);
-    opacity: 0;
-  }
+#main {
+    margin-right: 150px;
+    padding: 20px;
 }
