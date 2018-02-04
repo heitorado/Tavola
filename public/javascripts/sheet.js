@@ -64,14 +64,12 @@ $(document).ready( function() {
      * End of Function Section
      */
     
-
     /*
      * Code Section
      */
     console.log("Tavola sheet manager started!");
     content();   
-    
-    
+        
     $("#system").change( function() {	
 	console.log("Form changed: " + $('input[name=system-choice]:checked', '#system').val());
     });
@@ -82,9 +80,4 @@ $(document).ready( function() {
     /*
      * End of Code Section
      */
-    
-    
-    
-    /* 	 $('<li><button id="send-sheet" type="submit" class="btn btn-default navbar-btn">Save!</button></li>').insertAfter("#creation");*/
-
 });
