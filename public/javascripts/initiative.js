@@ -13,6 +13,7 @@ $( document ).ready( function () {
     var creatures = [];
     var old = creatures;
     var itemID = "ini-item";
+    var saved = [];
     /* End of Variable Section */
 
 
@@ -143,13 +144,26 @@ $( document ).ready( function () {
 	    }
 	);
 
-	// User output
-	$("#char-values").text(name + " was submitted with initiative equals to " + (roll + mod) + ".");
-
 	// Adding char to html list
 	updateList();
     });
 
+    $("#save").click( function () {
+	old = creatures.slice();
+	saved = creatures.slice();
+    });
+
+    $("#return").click( function () {
+	old = creatures.slice();
+	creatures = saved.slice();
+
+	updateList();
+    });
+    
+    $("#mechanics").click( function () {
+	alert("Not available yet.");
+    });
+    
     $(document).on("click", ".remove-char", function () {
 	old = creatures.slice();
 	
@@ -186,10 +200,5 @@ $( document ).ready( function () {
 
 	updateList();
     });
-
-    $("#mechanics").click( function () {
-	alert("Not available yet.");
-    });
-    
     /* End of Code Section */    
 });
