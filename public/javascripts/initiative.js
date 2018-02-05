@@ -12,6 +12,7 @@ $( document ).ready( function () {
     var mechanics = "";
     var creatures = [];
     var old = creatures;
+    var itemID = "ini-item";
     /* End of Variable Section */
 
 
@@ -34,6 +35,23 @@ $( document ).ready( function () {
 	}
 	console.log("-----------------------");
     };
+
+    var findWithAttr = function (array, attr, value) {
+	for(var i = 0; i < array.length; i += 1) {
+            if(array[i][attr] === value) {
+		return i;
+            }
+	}
+	return -1;
+    };
+
+    var addToList = function (id, name, roll, mod) {
+	$("#ini-list").append('<li id="' + id + '" class="list-group-item">' +
+			      '<p>' + name + ' | Initiative: ' + (roll + mod) +' = ' + '<i class="ra  ra-dice-six"></i>(' + roll +') + ' + mod + '</p>' +
+			      '<span class="close remove-char">&times;</span>' +
+			      '<i class="fas fa-angle-up"></i>' +
+			      '<i class="fas fa-angle-down"></i>' +
+			      '</li>');};
     /* End of Function Section */
 
     /* Code Section */
@@ -91,6 +109,7 @@ $( document ).ready( function () {
 	var name = $("#char-name").val();
 	var roll = parseInt( $("#ini-dice").val() );
 	var mod = parseInt( $("#ini-mod").val() );
+	var id = name + roll + '-' + mod + ':' + randInt(0, 120);
 	
 	roll = validNum(roll, "Initiative Dice");
 	mod = validNum(mod, "Initiative Modifier");
@@ -100,14 +119,31 @@ $( document ).ready( function () {
 	creatures.push (	    
 	    {
 		name: name,
+		id: id,
 		roll: roll,
 		mod: mod,
 		ini: roll + mod
 	    }
 	);
 
+	// User output
 	$("#char-values").text(name + " was submitted with initiative equals to " + (roll + mod) + ".");
+
+	// Adding char to html list
+	addToList(id, name, roll, mod);	
+    });
+
+    $(document).on("click", ".remove-char", function () {
+	console.log("Hei");
 	
+	var item = $(this).closest("li");
+	
+	var index = findWithAttr( creatures, 'id', item.attr("id") );
+	creatures.splice(index, 1);
+	
+	console.log("Removing:" + item.attr("id") );
+	
+	item.remove();
     });
     
     /* End of Code Section */    
