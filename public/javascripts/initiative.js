@@ -73,6 +73,7 @@ $( document ).ready( function () {
 	    console.log("Deleting all.");
 	    $("#ini-list").empty();
 	    creatures = [];
+	    creatures.length = 0;
 	}
     });
 
