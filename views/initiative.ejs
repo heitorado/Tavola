@@ -16,6 +16,8 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+	<script src="javascripts/dice.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="stylesheets/initiative.css">
 
 	<style>
@@ -36,8 +38,9 @@
 	    <a href="/"><%= title %></a><br>
 	    <hr/>
 	    <a id="add" href="#">Add</a>
+	    <a id="restart" href="#">Restart</a>
+	    <hr/>	    
 	    <a id="new" href="#">New</a>
-	    <hr/>
 	    <a id="next" href="#">Next</a>
 	    <a id="prev" href="#">Previous</a>
 	    <hr/>
@@ -61,6 +64,11 @@
 		    <div class="form-group mb-2 mx-sm-3 form-inline">
 			Mod: <input id="ini-mod" type="number" class="form-control" value="0">
 			<button id="dice" type="submit" class="btn btn-default">Dice</button><input id="ini-dice" type="number" class="form-control" value="0">
+		    </div>
+
+		    <div class="form-group form-inline">
+			<button id="submit-char" type="submit" class="btn btn-default">Submit</button>
+			<p id="char-values">Click to Submit</p>
 		    </div>
 		    
 		</div>

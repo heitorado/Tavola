@@ -1,0 +1,10 @@
+var randInt = function(begin, end) { return Math.floor( Math.random()*begin + end ); };
+var d2 =  function() { return randInt(2, 1); };
+var d3 =  function() { return randInt(3, 1); };
+var d4 =  function() { return randInt(4, 1); };
+var d6 =  function() { return randInt(6, 1); };
+var d8 =  function() { return randInt(8, 1); };
+var d10 =  function() { return randInt(10, 1); };
+var d12 =  function() { return randInt(12, 1); };
+var d20 =  function() { return randInt(20, 1); };
+var d100 =  function() { return randInt(100, 1); };
