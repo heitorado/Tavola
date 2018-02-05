@@ -73,7 +73,7 @@ $( document ).ready( function () {
 	    console.log("Deleting all.");
 	    $("#ini-list").empty();
 	    creatures = [];
-	    creatures.length = 0;
+	    $(".cur").remove();
 	}
     });
 
@@ -150,16 +150,24 @@ $( document ).ready( function () {
 	updateList();
     });
 
-    $(document).on("click", ".remove-char", function () {	
+    $(document).on("click", ".remove-char", function () {
+	old = creatures.slice();
+	
 	var item = $(this).closest("li");
 	
 	var index = findWithAttr( creatures, 'id', item.attr("id") );
 	creatures.splice(index, 1);
+
+	if(creatures.length === 0) {
+	    $(".cur").remove();
+	}
 		
 	item.remove();
     });
 
     $(document).on("click", ".fa-angle-up", function () {
+	old = creatures.slice();
+	
 	var item = $(this).closest("li");
 
 	var index = findWithAttr( creatures, 'id', item.attr("id") );
@@ -169,6 +177,8 @@ $( document ).ready( function () {
     });  
 
     $(document).on("click", ".fa-angle-down", function () {
+	old = creatures.slice();
+	
 	var item = $(this).closest("li");
 
 	var index = findWithAttr( creatures, 'id', item.attr("id") );
