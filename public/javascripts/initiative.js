@@ -26,8 +26,14 @@ $( document ).ready( function () {
     };
 
     var isGreater = function(a, b) { return b.ini - a.ini; };
-
-    var displayCreat = function() {};
+    
+    var displayCreatures = function() {
+	console.log("-----------------------");
+	for (var i = 0; i < creatures.length; i = i + 1) {
+	    console.log(creatures[i].name + " ==> " + creatures[i].ini);
+	}
+	console.log("-----------------------");
+    };
     /* End of Function Section */
 
     /* Code Section */
@@ -43,11 +49,7 @@ $( document ).ready( function () {
 	}
 
 	creatures.sort(isGreater);
-
-	for (var i = 0; i < creatures.length; i = i + 1) {
-	    console.log(creatures[i].name + " ==> " + creatures[i].ini);
-	}	
-	
+	displayCreatures();
     });
 
     $("#add").click( function () {
@@ -57,6 +59,7 @@ $( document ).ready( function () {
     $("#close-modal").click( function () {
 	$("#add-box").hide();
 	$("#char-values").text("Click to submit.");
+	displayCreatures();
     });
 
     $("#dice").click( function () {
@@ -64,18 +67,35 @@ $( document ).ready( function () {
     });
 
     $("#undo").click( function () {
-	creatures = old;
+	var tmp = old.slice();
+
+	old = creatures.slice();
+	creatures = tmp.slice();
+	
+	displayCreatures();
     });
-   
+
+    $("#next").click( function () {
+	old = creatures.slice();
+	creatures.push(creatures.shift());
+	displayCreatures();
+    });
+
+    $("#previous").click( function () {
+	old = creatures.slice();
+	creatures.unshift(creatures.pop());
+	displayCreatures();
+    });
+    
     $("#submit-char").click( function () {
 	var name = $("#char-name").val();
 	var roll = parseInt( $("#ini-dice").val() );
 	var mod = parseInt( $("#ini-mod").val() );
-	    
+	
 	roll = validNum(roll, "Initiative Dice");
 	mod = validNum(mod, "Initiative Modifier");
 
-	old = creatures;
+	old = creatures.slice();
 	
 	creatures.push (	    
 	    {
@@ -90,6 +110,5 @@ $( document ).ready( function () {
 	
     });
     
-    $("#add-box").toggle();
     /* End of Code Section */    
 });

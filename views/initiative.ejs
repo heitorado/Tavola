@@ -27,6 +27,11 @@
 	 #char-name { width:50%; left-margin: 150px; }
 	 
 	 #dice { margin: 10px; }
+
+	 #submit-char {
+	     position: relative;
+	     left: 300px;
+	 }
 	 
 	</style>
 	
@@ -42,7 +47,7 @@
 	    <hr/>	    
 	    <a id="new" href="#">New</a>
 	    <a id="next" href="#">Next</a>
-	    <a id="prev" href="#">Previous</a>
+	    <a id="previous" href="#">Previous</a>
 	    <hr/>
 	    <a id="undo" href="#">Undo</a>
 	    <a id="change" href="#">Mechanics</a>
@@ -67,8 +72,7 @@
 		    </div>
 
 		    <div class="form-group form-inline">
-			<button id="submit-char" type="submit" class="btn btn-default">Submit</button>
-			<p id="char-values">Click to Submit</p>
+			<button id="submit-char" type="submit" class="btn btn-default">Submit <p id="char-values"></p></button>
 		    </div>
 		    
 		</div>
