@@ -89,6 +89,25 @@ body {
     left: 300px;
 }
 
+#ini-box{
+    line-height: 16px;
+}
+
+
+p{
+    margin: 0 0 0px;
+}
+
+.char-text{
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bar-icon{
+    font-size: 24px;
+}
+
+
 .close {
     color: red;
 }
