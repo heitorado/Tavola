@@ -48,8 +48,7 @@ $( document ).ready( function () {
 	if(type === 'npc')
             icon = '<i class="fas fa-child"></i>';
 
-	$("#ini-list").append('<li id="' + id + '" class="list-group-item">' +
-			      '<span class="close remove-char">&times;</span>' +
+	$("#ini-list").append('<li id="' + id + '" class="list-group-item">' +			    
 			      '<div class="container-fluid character-line">' + 
                               '<div class="row">' +
                               '<div class="col-md-4 char-text">' +
@@ -59,21 +58,26 @@ $( document ).ready( function () {
                               '<div class="col-md-4 char-text">' +
                               '<span>' + 'Initiative: ' + (roll + mod) +' = ' + '<i class="ra ra-dice-six"></i>(' + roll +') + ' + mod + '</span>' +
                               '</div>' +
-
-                              '<div class="col-md-1 bar-icon">' +
-                              '<i class="fas fa-cogs"></i></span>' +
+			      
+			      '<div class="col-md-1 bar-icon">' +
+                              '<i class="ra  ra-sword"></i>' +
                               '</div>' +
 
-                              '<div class="col-md-1 bar-icon">' +
-                              '<i class="ra  ra-sword"></i>' +
+			      '<div class="col-md-1 bar-icon">' +
+                              '<i class="fas fa-cogs"></i></span>' +
                               '</div>' +
 
                               '<div class="col-md-1 arrows">' +
                               '<p><i class="fas fa-angle-up"></i></p>'+
                               '<p><i class="fas fa-angle-down"></i></p>' +
                               '</div>' +
-                              '</div>' +
+                              
+			      '<div class="col-md-1">' +
+			      '<span class="close remove-char">&times;</span>' +
 			      '</div>' +
+
+			      '</div>' +
+			      '</div>' +			     
 			      '</li>');
     };
 
@@ -238,5 +242,10 @@ $( document ).ready( function () {
 
 	updateList();
     });
+
+    $(document).on('click', '.fa-cogs', function () {
+	alert("Not available yet.");
+    });
+    
     /* End of Code Section */    
 });

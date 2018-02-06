@@ -10,8 +10,8 @@ router.get('/sheet', function(req, res) {
     res.render('sheet', { title: 'Tavola' });
 });
 
-router.get('/initiative', function(req,res) {
-    res.render('initiative', { title: 'Tavola' });
+router.get('/combat', function(req,res) {
+    res.render('combat', { title: 'Tavola' });
 });
 
 module.exports = router;

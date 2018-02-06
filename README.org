@@ -1,2 +1,5 @@
 * [[https://tavola-rpg.herokuapp.com/][Tavola]]
   An RPG manager.
+  
+  
+  Thanks to [[https://github.com/heitorado/][Heitorado]]
