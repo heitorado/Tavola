@@ -38,53 +38,49 @@ $( document ).ready( function () {
     return -1;
     };
 
-   /* var addToList = function (id, name, roll, mod) {
-    $("#ini-list").append('<li id="' + id + '" class="list-group-item">' +
-                  '<span class="close remove-char">&times;</span>' +
-                  '<div class="container-fluid">' + 
-                  '<div class="row lineOne">' +
-                  '<span class="col-md-10"></span>' +
-                  '<div class="col-md-1"> <span><i class="fas fa-angle-up"></i></span> </div>' +
-                  '</div>' +
-                  '<div class="row lineTwo">' +
-                  '<span class="col-md-6">' + name + ' | Initiative: ' + (roll + mod) +' = ' + '<i class="ra  ra-dice-six"></i>(' + roll +') + ' + mod + '</span>' +
-                  '<span class="col-md-3"></span>' +
-                  '<div class="col-md-1"> <span><i class="fas fa-cogs"></i></span> </div>' +
-                  '<div class="col-md-1"> <span><i class="ra  ra-sword"></i></span> </div>' +
-                  '</div>' +
-                  '<div class="row lineThree">' +
-                  '<span class="col-md-10"></span>' +
-                  '<div class="col-md-1"> <span><i class="fas fa-angle-down"></i></span> </div>' +
-                  '<span class="col-md-1"></span>' +
-                  '</div></div>' +
-                  '</li>');
-    };*/
+    var addToList = function (id, name, roll, mod, type) {
 
-    var addToList = function (id, name, roll, mod) {
-    $("#ini-list").append('<li id="' + id + '" class="list-group-item">' +
-                  '<span class="close remove-char">&times;</span>' +
-                  '<div class="container-fluid character-line">' + 
-                    '<div class="row">' +
-                      '<div class="col-md-8 char-text">' +
-                        '<span>' + name + ' | Initiative: ' + (roll + mod) +' = ' + '<i class="ra ra-dice-six"></i>(' + roll +') + ' + mod + '</span>' +
-                      '</div>' +
+      var icon;
 
-                      '<div class="col-md-1 bar-icon">' +
-                        '<i class="fas fa-cogs"></i></span>' +
-                      '</div>' +
+      if(type === 'player')
+        icon = '<i class="fas fa-user"></i>';
+      if(type === 'mob')
+        icon = '<i class="fab fa-optin-monster"></i>';
+      if(type === 'npc')
+        icon = '<i class="fas fa-child"></i>';
 
-                      '<div class="col-md-1 bar-icon">' +
-                        '<i class="ra  ra-sword"></i>' +
-                      '</div>' +
+      $("#ini-list").append('<li id="' + id + '" class="list-group-item">' +
+                    '<span class="close remove-char">&times;</span>' +
+                      '<div class="container-fluid character-line">' + 
+                        '<div class="row">' +
+                          '<div class="col-md-4 char-text">' +
+                            '<span>' + icon + name + '</span>' +
+                          '</div>' +
 
-                      '<div class="col-md-1 arrows">' +
-                        '<p><i class="fas fa-angle-up"></i></p>'+
-                        '<p><i class="fas fa-angle-down"></i></p>' +
+                          '<div class="col-md-4 char-text">' +
+                            '<span>' + 'Initiative: ' + (roll + mod) +' = ' + '<i class="ra ra-dice-six"></i>(' + roll +') + ' + mod + '</span>' +
+                          '</div>' +
+
+                          '<div class="col-md-1 bar-icon">' +
+                            '<i class="fas fa-cogs"></i></span>' +
+                          '</div>' +
+
+                          '<div class="col-md-1 bar-icon">' +
+                            '<i class="ra  ra-sword"></i>' +
+                          '</div>' +
+
+                          '<div class="col-md-1 arrows">' +
+                            '<p><i class="fas fa-angle-up"></i></p>'+
+                            '<p><i class="fas fa-angle-down"></i></p>' +
+                          '</div>' +
+                        '</div>' +
                       '</div>' +
-                    '</div>' +
-                  '</div>' +
-                  '</li>');
+                    '</li>');
     };
+
+    var friendOrFoe = function(){
+
+    }
 
     var updateList = function() {
     $("#ini-list").empty();
@@ -94,12 +90,13 @@ $( document ).ready( function () {
         var name = creatures[0].name;
         var roll = creatures[0].roll;
         var mod = creatures[0].mod;
+        var type = creatures[0].type;
 
         $("#current-box").append('<p id="current" class="cur list-group-item">' + name + ' | Initiative: ' + (roll + mod) +' = ' + '<i class="ra  ra-dice-six"></i>(' + roll +') + ' + mod + '</p>' + '<hr class="cur" />');
     }   
     
     creatures.forEach( function (c) {
-        addToList(c.id, c.name, c.roll, c.mod);
+        addToList(c.id, c.name, c.roll, c.mod, c.type);
     }); 
     };
 
@@ -168,6 +165,8 @@ $( document ).ready( function () {
     var roll = parseInt( $("#ini-dice").val() );
     var mod = parseInt( $("#ini-mod").val() );
     var id = name + roll + '-' + mod + ':' + randInt(0, 120);
+    var type = ; //zé muda aqui de acordo com checkbox
+    //type é uma string que pode ter os valores 'player' 'mob' e 'npc'
     
     roll = validNum(roll, "Initiative Dice");
     mod = validNum(mod, "Initiative Modifier");
