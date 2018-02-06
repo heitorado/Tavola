@@ -132,8 +132,8 @@ $( document ).ready( function () {
 	$("#char-values").text("Click to submit.");
     });
 
-    $("#dice").click( function () {
-	$("#ini-dice").val( d20() );
+    $("#roll-btn-submit").click( function () {
+	$("#ini-roll-submit").val( d20() );
     });
 
     $("#undo").click( function () {
@@ -161,7 +161,7 @@ $( document ).ready( function () {
     
     $("#submit-char").click( function () {
 	var name = $("#char-name").val();
-	var roll = parseInt( $("#ini-dice").val() );
+	var roll = parseInt( $("#ini-roll-submit").val() );
 	var mod = parseInt( $("#ini-mod").val() );
 	var id = name + roll + '-' + mod + ':' + randInt(0, 120);
 	var type = $('input[name=creature-type-check]:checked', '#creature-type').val(); // check if is Player, NPC or monster
