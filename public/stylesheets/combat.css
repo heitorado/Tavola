@@ -55,8 +55,9 @@ body {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
+    padding-bottom: 0px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 30%;
 }
 
 /* The Close Button */
@@ -78,15 +79,27 @@ body {
     padding: 20px;
 }
 
-#ini-mod, #ini-dice { width: 25%; left-margin: 125px; }
+#roll-submit { position: relative; left: 20px; }
 
-#char-name { width:50%; left-margin: 150px; }
+#ini-mod {
+    position: relative;
+    left: 12px;
+    width: 25%;
+}
 
-#dice { margin: 10px; }
+#ini-roll-submit { width: 24%;  }
+#roll-btn-submit { margin-right: 5px; }
+
+#char-name { width:70%; }
 
 #submit-char {
     position: relative;
-    left: 300px;
+    left: 135px;
+}
+
+#creature-type {
+    position: relative;
+    left: 75px;
 }
 
 #ini-box{
@@ -94,7 +107,7 @@ body {
 }
 
 
-p{
+p {
     margin: 0 0 0px;
 }
 

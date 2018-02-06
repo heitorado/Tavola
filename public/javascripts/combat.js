@@ -81,10 +81,6 @@ $( document ).ready( function () {
 			      '</li>');
     };
 
-    var friendOrFoe = function() {
-	
-    };
-
     var updateList = function() {
 	$("#ini-list").empty();
 	$(".cur").remove();
@@ -246,6 +242,7 @@ $( document ).ready( function () {
     $(document).on('click', '.fa-cogs', function () {
 	alert("Not available yet.");
     });
-    
+
+    $("#add-box").toggle();
     /* End of Code Section */    
 });
